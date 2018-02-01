@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Healthy Fruits</string>
+    <string name="about">About</string>
+    <string name="fruits_head_actv">Fruits Info</string>
+    <string name="share">Share</string>
+    <string name="contact">Contact</string>
+    <string name="detail_fruit_lbl">Detail Fruit</string>
+
+    <string-array name="main_titles">
+        <item>Fruits</item>
+        <item>Juice Fruits</item>
+        <item>Healthy Recipes</item>
+    </string-array>
+
+    <string-array name="main_images">
+        <item>@drawable/image_fruits_ini</item>
+        <item>@drawable/image_juice_fruit_ini</item>
+        <item>@drawable/image_recipe_ini</item>
+    </string-array>
+
+
+    <string-array name="title_fruits">
+        <item>Coconut</item>
+        <item>Peach</item>
+        <item>Strawberry</item>
+        <item>Pomegranate</item>
+        <item>Guava</item>
+        <item>Fig</item>
+        <item>Kiwi</item>
+        <item>Lemon</item>
+        <item>Tangerine</item>
+        <item>Mango</item>
+        <item>Apple</item>
+        <item>Melon</item>
+        <item>Orange</item>
+        <item>Pear</item>
+        <item>Pineapple</item>
+        <item>Banana</item>
+        <item>Watermelon</item>
+    </string-array>
+
+    <string-array name="img_fruits">
+        <item>@drawable/coco</item>
+        <item>@drawable/durazno</item>
+        <item>@drawable/fresa</item>
+        <item>@drawable/granada</item>
+        <item>@drawable/guayaba</item>
+        <item>@drawable/higo</item>
+        <item>@drawable/kiwi</item>
+        <item>@drawable/limon</item>
+        <item>@drawable/mandarina</item>
+        <item>@drawable/mango</item>
+        <item>@drawable/manzana</item>
+        <item>@drawable/melon</item>
+        <item>@drawable/naranja</item>
+        <item>@drawable/pera</item>
+        <item>@drawable/pinia</item>
+        <item>@drawable/platano</item>
+        <item>@drawable/sandia</item>
+    </string-array>
+
+    <string name="info_watermelon">
+        The watermelon is a large annual plant with long, weak, trailing or climbing stems which are five-angled (five-sided) and up to 3 m (10 ft) long.
+        Young growth is densely woolly with yellowish-brown hairs which disappear as the plant ages. The leaves are large, coarse, hairy pinnately-lobed
+        and alternate; they get stiff and rough when old. The plant has branching tendrils. The white to yellow flowers grow singly in the leaf axils and
+        the corolla is white or yellow inside and greenish-yellow on the outside. The flowers are unisexual, with male and female flowers occurring on the
+        same plant (monoecious). The male flowers predominate at the beginning of the season; the female flowers, which develop later, have inferior ovaries.
+        The styles are united into a single column. The large fruit is a kind of modified berry called a pepo with a thick rind (exocarp) and fleshy center
+        (mesocarp and endocarp). Wild plants have fruits up to 20 cm (8 in) in diameter, while cultivated varieties may exceed 60 cm (24 in). The rind of the
+        fruit is mid- to dark green and usually mottled or striped, and the flesh, containing numerous pips spread throughout the inside, can be red or pink
+        (most commonly), orange, yellow, green or white.
+    </string>
+    <string name="introduction">Introduction</string>
+    <string name="lbl_recipes">Recipes</string>
+    <string name="lbl_juice_fruits">Juice Fruits</string>
+
+    <string-array name="img_recipes">
+        <item>@drawable/salmon</item>
+        <item>@drawable/sweet_salad</item>
+        <item>@drawable/sweet_chicken</item>
+    </string-array>
+
+    <string-array name="title_recipes">
+        <item>Salmon with Rice</item>
+        <item>Sweet Salad</item>
+        <item>Sweet Salad Chicken</item>
+    </string-array>
+
+
+</resources>

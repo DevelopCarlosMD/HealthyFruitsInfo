@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.coyotestudio.healthyfruitsinfo"
+    android:installLocation="preferExternal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".main_view.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fruits_view.FruitsActivity"
+            android:label="@string/fruits_head_actv"
+            android:parentActivityName=".main_view.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main_view.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".fruits_view.DetailFruitActivity"
+            android:label="@string/detail_fruit_lbl"
+            android:parentActivityName=".fruits_view.FruitsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".fruits_view.FruitsActivity" />
+        </activity>
+
+        <activity
+            android:name=".recipies_view.RecipesActivity"
+            android:label="@string/lbl_recipes"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".juice_fruits_view.JuiceFruitsActivity"
+            android:label="@string/lbl_juice_fruits"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#69F0AE</color>
+    <color name="translucent_black">#80000000</color>
+    <color name="green_card_fruits">#804CAF50</color>
+
+    <color name="dark_grey">#424242</color>
+    <color name="button_grey">#757575</color>
+
+
+
+
+
+</resources>
