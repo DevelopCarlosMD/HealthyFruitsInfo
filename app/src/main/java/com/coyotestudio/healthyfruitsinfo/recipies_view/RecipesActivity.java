@@ -31,6 +31,7 @@ public class RecipesActivity extends AppCompatActivity {
     private ArrayList<Recipe> mArrRecipeData;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,10 @@ public class RecipesActivity extends AppCompatActivity {
         rvMainRecipes.setAdapter(recipesAdapter);
 
 
+    }
+
+    public void initElements(){
+        toolbar.setTitle(R.string.recipes);
     }
 
     public void initDataRecipe() {

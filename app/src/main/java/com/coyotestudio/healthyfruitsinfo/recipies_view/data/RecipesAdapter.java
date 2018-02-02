@@ -30,18 +30,14 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         mRecipeData = recipeData;
-
     }
 
     @Override
     public RecipesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         final View itemView = mInflater.inflate(R.layout.list_item_recipes, parent, false);
         RecyclerViewClicksListener listener = (view, position) -> {
             Toast.makeText(mContext, "Try recipe!!", Toast.LENGTH_SHORT).show();
         };
-
-
         return new ViewHolder(itemView, listener);
     }
 

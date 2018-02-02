@@ -21,6 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import com.coyotestudio.healthyfruitsinfo.fruits_view.FruitsActivity;
+import com.coyotestudio.healthyfruitsinfo.juice_fruits_view.JuiceFruitsActivity;
 import com.coyotestudio.healthyfruitsinfo.recipies_view.RecipesActivity;
 import com.coyotestudio.healthyfruitsinfo.utils.RecyclerViewClicksListener;
 
@@ -50,7 +51,9 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
                 mContext.startActivity(intent);
                 //Toast.makeText(mContext, "Fruits option", Toast.LENGTH_SHORT).show();
             } else if (mArrayMenuData.get(position).getOptionName().equals("Juice Fruits")) {
-                Toast.makeText(mContext, "Juice Fruits", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, JuiceFruitsActivity.class);
+                mContext.startActivity(intent);
+                //Toast.makeText(mContext, "Juice Fruits", Toast.LENGTH_SHORT).show();
             } else if (mArrayMenuData.get(position).getOptionName().equals("Healthy Recipes")) {
                 //Toast.makeText(mContext, "Healthy Recipes", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(mContext, RecipesActivity.class);
