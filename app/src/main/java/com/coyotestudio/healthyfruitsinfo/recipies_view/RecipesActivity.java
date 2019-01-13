@@ -19,7 +19,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecipesActivity extends AppCompatActivity {
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.rv_main_recipes)
@@ -31,12 +30,12 @@ public class RecipesActivity extends AppCompatActivity {
     private ArrayList<Recipe> mArrRecipeData;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipes);
         ButterKnife.bind(this);
+        initElements();
 
         int gridColumnContent = getResources().getInteger(R.integer.grid_column_recipes);
         rvMainRecipes.setLayoutManager(new GridLayoutManager(this, gridColumnContent));
@@ -45,16 +44,14 @@ public class RecipesActivity extends AppCompatActivity {
         initDataRecipe();
 
         rvMainRecipes.setAdapter(recipesAdapter);
-
-
     }
 
-    public void initElements(){
+    public void initElements() {
         toolbar.setTitle(R.string.recipes);
+        setSupportActionBar(toolbar);
     }
 
     public void initDataRecipe() {
-
         String[] mainTitlesRecipe = getResources().getStringArray(R.array.title_recipes);
         TypedArray mainRecipeImages = getResources().obtainTypedArray(R.array.img_recipes);
 

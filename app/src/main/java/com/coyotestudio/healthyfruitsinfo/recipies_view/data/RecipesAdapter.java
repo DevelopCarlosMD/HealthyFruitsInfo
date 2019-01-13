@@ -2,7 +2,6 @@ package com.coyotestudio.healthyfruitsinfo.recipies_view.data;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,9 @@ import com.coyotestudio.healthyfruitsinfo.utils.RecyclerViewClicksListener;
 import java.util.ArrayList;
 
 /**
- * Created by mac on 1/29/18.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 1/29/18.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder> {

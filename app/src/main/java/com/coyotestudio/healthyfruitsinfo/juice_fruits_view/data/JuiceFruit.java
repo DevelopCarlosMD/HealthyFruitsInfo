@@ -1,7 +1,9 @@
 package com.coyotestudio.healthyfruitsinfo.juice_fruits_view.data;
 
 /**
- * Created by CMDroid on 01/02/2018.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 01/02/2018.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class JuiceFruit {

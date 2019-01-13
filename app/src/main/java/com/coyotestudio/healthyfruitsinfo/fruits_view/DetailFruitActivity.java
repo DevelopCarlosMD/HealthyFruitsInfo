@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,11 +14,16 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.coyotestudio.healthyfruitsinfo.R;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DetailFruitActivity extends AppCompatActivity {
+
+    private static final String TAG = DetailFruitActivity.class.getSimpleName();
     //@BindView(R.id.imv_fruit_detail)
     //ImageView imvFruitDetail;
     @BindView(R.id.toolbar_detail)
@@ -26,26 +32,48 @@ public class DetailFruitActivity extends AppCompatActivity {
     FloatingActionButton fabSearch;
     @BindView(R.id.collapsing_detail)
     CollapsingToolbarLayout collapsing;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_fruit);
-        ButterKnife.bind(this);
-        setSupportActionBar(toolbarDetail);
-        collapsing.setTitle("Watermelon");
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setDisplayHomeAsUpEnabled(true);
-        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_fruits, menu);
+        inflater.inflate(R.menu.menu_main, menu);
+        initIntances();
+        recoverData();
 
         return true;
+    }
+
+    public void initIntances() {
+
+        ButterKnife.bind(this);
+        initCollapsingTool("");
+        FirebaseApp.initializeApp(this);
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
+
+    }
+
+    public void initCollapsingTool(String titlefruit) {
+        // String from the title fruit
+        collapsing.setTitle("Watermelon");
+    }
+
+    public void recoverData() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        if (mDatabase != null) {
+            //mDatabase.child("juicefruit
+            Log.i(TAG, "Recover db success!!");
+        }
     }
 
     @Override

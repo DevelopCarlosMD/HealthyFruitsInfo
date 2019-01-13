@@ -31,6 +31,7 @@
             android:layout_marginLeft="@dimen/md_keylines"
             android:layout_marginStart="@dimen/md_keylines"
             android:text="Green Juice"
+            android:visibility="invisible"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@android:color/white" />
 
@@ -45,7 +46,8 @@
             android:layout_marginTop="@dimen/md_keylines"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Try it!"
+            tools:text="Try it!"
+            android:text="Green Juice"
             android:textColor="@color/dark_grey"
             android:textSize="@dimen/article_subheading" />
 

@@ -1,19 +1,20 @@
 package com.coyotestudio.healthyfruitsinfo.main_view.data;
 
 /**
- * Created by mac on 1/26/18.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 2/2/18.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
-
-public class MenuIniData {
+public class MainViewData {
 
     private String optionName;
     private int imgResource;
 
-    public MenuIniData(){
+    public MainViewData(){
 
     }
 
-    public MenuIniData(String optionMain, int imgResource) {
+    public MainViewData(String optionMain, int imgResource) {
         this.optionName = optionMain;
         this.imgResource = imgResource;
     }

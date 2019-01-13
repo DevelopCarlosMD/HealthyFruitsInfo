@@ -21,7 +21,9 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 /**
- * Created by mac on 1/25/18.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 1/25/18.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> {

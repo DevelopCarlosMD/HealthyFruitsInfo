@@ -1,24 +1,19 @@
 package com.coyotestudio.healthyfruitsinfo.main_view.data;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.coyotestudio.healthyfruitsinfo.R;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import com.coyotestudio.healthyfruitsinfo.fruits_view.FruitsActivity;
 import com.coyotestudio.healthyfruitsinfo.juice_fruits_view.JuiceFruitsActivity;
@@ -26,16 +21,18 @@ import com.coyotestudio.healthyfruitsinfo.recipies_view.RecipesActivity;
 import com.coyotestudio.healthyfruitsinfo.utils.RecyclerViewClicksListener;
 
 /**
- * Created by mac on 1/23/18.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 2/2/18.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHolder> {
 
     private Context mContext;
     private LayoutInflater inflater;
-    private ArrayList<MenuIniData> mArrayMenuData;
+    private ArrayList<MainViewData> mArrayMenuData;
 
-    public MainViewAdapter(Context context, ArrayList<MenuIniData> mArrayMenuData) {
+    public MainViewAdapter(Context context, ArrayList<MainViewData> mArrayMenuData) {
         mContext = context;
         this.mArrayMenuData = mArrayMenuData;
         this.inflater = LayoutInflater.from(context);
@@ -67,7 +64,7 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(MainViewAdapter.ViewHolder holder, int position) {
-        MenuIniData currentData = mArrayMenuData.get(position);
+        MainViewData currentData = mArrayMenuData.get(position);
         holder.bindTo(currentData);
 
         Glide.with(mContext).
@@ -97,7 +94,7 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
             itemView.setOnClickListener(this);
         }
 
-        public void bindTo(MenuIniData data) {
+        public void bindTo(MainViewData data) {
             mTitleMainCard.setText(data.getOptionName());
         }
 

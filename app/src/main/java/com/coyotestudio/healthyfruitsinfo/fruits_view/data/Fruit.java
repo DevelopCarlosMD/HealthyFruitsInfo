@@ -1,7 +1,9 @@
 package com.coyotestudio.healthyfruitsinfo.fruits_view.data;
 
 /**
- * Created by mac on 1/25/18.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 2/2/18.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class Fruit {

@@ -19,7 +19,9 @@ import java.util.ArrayList;
 import butterknife.OnClick;
 
 /**
- * Created by CMDroid on 01/02/2018.
+ * Created by J. Carlos Medina Diaz @_CarlosMD on 01/02/2018.
+ * Coyote Dev Studio
+ * carlos.medj@gmail.com
  */
 
 public class JuiceFruitAdapter extends RecyclerView.Adapter<JuiceFruitAdapter.ViewHolder> {

@@ -1,6 +1,5 @@
 package com.coyotestudio.healthyfruitsinfo.main_view;
 
-import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,9 +12,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.coyotestudio.healthyfruitsinfo.R;
-import com.coyotestudio.healthyfruitsinfo.fruits_view.FruitsActivity;
 import com.coyotestudio.healthyfruitsinfo.main_view.data.MainViewAdapter;
-import com.coyotestudio.healthyfruitsinfo.main_view.data.MenuIniData;
+import com.coyotestudio.healthyfruitsinfo.main_view.data.MainViewData;
 
 
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     @BindView(R.id.rv_main_container)
     RecyclerView rvMainViewOptions;
-    private ArrayList<MenuIniData> mArrayMenuInitial;
+    private ArrayList<MainViewData> mArrayMenuInitial;
     private MainViewAdapter mAdapter;
 
 
@@ -90,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         mArrayMenuInitial.clear();
 
         for (int i = 0; i < mainTitlesOption.length; i++) {
-            mArrayMenuInitial.add(new MenuIniData(mainTitlesOption[i],
+            mArrayMenuInitial.add(new MainViewData(mainTitlesOption[i],
                     mainImagesResources.getResourceId(i, 0)));
         }
 

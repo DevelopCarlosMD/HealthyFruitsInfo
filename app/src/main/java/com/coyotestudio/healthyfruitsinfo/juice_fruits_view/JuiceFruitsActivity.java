@@ -23,10 +23,9 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class JuiceFruitsActivity extends AppCompatActivity {
-
-    private static final String TAG = JuiceFruitsActivity.class.getSimpleName();
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.rv_main_juice_fruit)
@@ -34,10 +33,10 @@ public class JuiceFruitsActivity extends AppCompatActivity {
     @BindView(R.id.fab_search)
     FloatingActionButton fabSearch;
 
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference dbRef;
+    private DatabaseReference mDatabase;
     private JuiceFruitAdapter juiceFruitAdapter;
     private ArrayList<JuiceFruit> mArrJuiceFruit;
+    private static final String TAG = JuiceFruitsActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +52,11 @@ public class JuiceFruitsActivity extends AppCompatActivity {
         initDataJuice();
 
         rvJuiceFruits.setAdapter(juiceFruitAdapter);
-        mDatabase = FirebaseDatabase.getInstance();
-        dbRef = mDatabase.getReference("healthyfruits-f026e");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        if(dbRef != null){
-            dbRef.child("foodrecipe").addValueEventListener(new ValueEventListener() {
+        //dbRef = mDatabase.getReference("healthyfruits-f026e");
+        if (mDatabase != null) {
+            mDatabase.child("juicefruit").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     Log.i(TAG, "onDataChange: " + dataSnapshot.getValue());
@@ -66,16 +65,16 @@ public class JuiceFruitsActivity extends AppCompatActivity {
                 public void onCancelled(DatabaseError databaseError) {
                 }
             });
-            Log.d(TAG, "onCreate: Success firebase get data"  + dbRef.toString());
+            Log.d(TAG, "onCreate: Success firebase get data" + mDatabase.toString());
         }
     }
 
-    public void initElements(){
+    public void initElements() {
         toolbar.setTitle(R.string.juice_fruits);
+        setSupportActionBar(toolbar);
     }
 
     private void initDataJuice() {
-
         String[] mainTitlesRecipe = getResources().getStringArray(R.array.title_juice);
         TypedArray mainJuiceFruitImages = getResources().obtainTypedArray(R.array.img_juice_fruit);
 
@@ -91,9 +90,8 @@ public class JuiceFruitsActivity extends AppCompatActivity {
         juiceFruitAdapter.notifyDataSetChanged();
     }
 
+    @OnClick(R.id.fab_search)
+    public void searchInfo(){
 
-
-
-
-
+    }
 }
