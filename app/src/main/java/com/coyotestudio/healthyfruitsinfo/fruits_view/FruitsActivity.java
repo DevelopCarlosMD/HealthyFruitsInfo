@@ -1,5 +1,6 @@
 package com.coyotestudio.healthyfruitsinfo.fruits_view;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -13,8 +14,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.coyotestudio.healthyfruitsinfo.R;
+import com.coyotestudio.healthyfruitsinfo.about.AboutOfActivity;
 import com.coyotestudio.healthyfruitsinfo.fruits_view.data.Fruit;
 import com.coyotestudio.healthyfruitsinfo.fruits_view.data.FruitAdapter;
+import com.coyotestudio.healthyfruitsinfo.utils.Util;
 
 import java.util.ArrayList;
 
@@ -52,7 +55,7 @@ public class FruitsActivity extends AppCompatActivity {
     }
 
     public void initilizeData() {
-        String[] fruitNames = getResources().getStringArray(R.array.title_fruits);
+        String[] fruitNames = getResources().getStringArray(R.array.titulo_frutas);
         // Consider the info about the fruits
 
         TypedArray fruitsImageResources = getResources().obtainTypedArray(R.array.img_fruits);
@@ -80,13 +83,15 @@ public class FruitsActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.option_about:
-                Toast.makeText(this, "Press about", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, AboutOfActivity.class);
+                startActivity(i);
                 break;
             case R.id.option_share:
-                Toast.makeText(this, "Press share", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.option_contact:
-                Toast.makeText(this, "Press contact", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Contact option Listener", Toast.LENGTH_SHORT).show();
+                Util.sendEmail(this);
                 break;
 
         }

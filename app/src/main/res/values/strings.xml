@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Healthy Fruits</string>
     <string name="about">About</string>
     <string name="fruits_head_actv">Fruits Info</string>
@@ -39,7 +39,34 @@
         <item>Watermelon</item>
     </string-array>
 
+    <array name="titulo_frutas">
+        <item>Cereza</item>
+        <item>Ciruela</item>
+        <item>Coco</item>
+        <item>Durazno</item>
+        <item>Fresa</item>
+        <item>Granada</item>
+        <item>Guayaba</item>
+        <item>Higo</item>
+        <item>Kiwi</item>
+        <item>Limon</item>
+        <item>Mandarina</item>
+        <item>Mango</item>
+        <item>Manaza</item>
+        <item>Melon</item>
+        <item>Naranja</item>
+        <item>Papaya</item>
+        <item>Pera</item>
+        <item>Piña</item>
+        <item>Platano</item>
+        <item>Sandia</item>
+        <item>Toronja</item>
+        <item>Uva</item>
+    </array>
+
     <string-array name="img_fruits">
+        <item>@drawable/cereza</item>
+        <item>@drawable/ciruela</item>
         <item>@drawable/coco</item>
         <item>@drawable/durazno</item>
         <item>@drawable/fresa</item>
@@ -53,10 +80,13 @@
         <item>@drawable/manzana</item>
         <item>@drawable/melon</item>
         <item>@drawable/naranja</item>
+        <item>@drawable/papaya</item>
         <item>@drawable/pera</item>
         <item>@drawable/pinia</item>
         <item>@drawable/platano</item>
         <item>@drawable/sandia</item>
+        <item>@drawable/toronja</item>
+        <item>@drawable/uva</item>
     </string-array>
 
     <string name="info_watermelon">
@@ -75,6 +105,7 @@
     <string name="lbl_juice_fruits">Juice Fruits</string>
     <string name="juice_fruits">Juice Fruits</string>
     <string name="recipes">Recipes</string>
+    <string name="msg_about_of">Esta aplicación ha sido desarrollada para el curso de Android Funfamentals de la UPV. Author: Juan Carlos Medina Díaz</string>
 
     <string-array name="img_recipes">
         <item>@drawable/salmon</item>
@@ -100,5 +131,7 @@
         <item>Vegetables Juice</item>
     </string-array>
 
+    <!-- New strings added-->
+    <string name="com.crashlytics.useFirebaseAppId" tools:ignore="ExtraTranslation">true</string>
 
 </resources>

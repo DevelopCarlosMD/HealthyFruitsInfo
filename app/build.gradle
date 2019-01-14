@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
 def getDate() {
+
     def date = new Date()
     def formattedDate = date.format("yyMMddHHmm")
     return formattedDate
@@ -14,6 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,6 +35,11 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g" // 2g should be also OK
     }
 
 }
@@ -58,9 +67,13 @@ dependencies {
     implementation "io.reactivex:rxandroid:$RX_ANDROID_VERSION"
     implementation "io.reactivex:rxjava:$RX_JAVA_VERSION"
 
-    implementation "com.google.firebase:firebase-core:$PLAY_SERVICES_VERSION"
-    implementation "com.google.firebase:firebase-database:$PLAY_SERVICES_VERSION"
-    implementation "com.google.firebase:firebase-messaging:$PLAY_SERVICES_VERSION"
+    implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
+    implementation "com.google.firebase:firebase-database:$FIREBASE_REALTIME_DATABASE"
+    implementation "com.google.firebase:firebase-messaging:$FIREBASE_MESSAGING"
+
+    // Add dependency
+    implementation ('com.crashlytics.sdk.android:crashlytics:2.7.0')
+
 }
 apply plugin: 'com.google.gms.google-services'
 

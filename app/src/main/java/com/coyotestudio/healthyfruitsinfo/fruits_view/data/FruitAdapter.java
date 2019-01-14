@@ -2,6 +2,7 @@ package com.coyotestudio.healthyfruitsinfo.fruits_view.data;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.coyotestudio.healthyfruitsinfo.R;
 import com.coyotestudio.healthyfruitsinfo.fruits_view.DetailFruitActivity;
+import com.coyotestudio.healthyfruitsinfo.utils.Constants;
 import com.coyotestudio.healthyfruitsinfo.utils.RecyclerViewClicksListener;
 
 import org.w3c.dom.Text;
@@ -47,8 +49,10 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
         RecyclerViewClicksListener listener = (view, position) -> {
             // todo pass the information to show in the cardFruitMoreInfo
             // Fruit currentFruit = mFruitsData.get(position);
-
+            String title = ((TextView) view.findViewById(R.id.tv_title_fruit)).getText().toString();
+            Log.i(TAG, "onCreateViewHolder: " + title);
             Intent intent = new Intent(mContext, DetailFruitActivity.class);
+            intent.putExtra(Constants.TITLE_FRUIT, title);
             mContext.startActivity(intent);
             //Log.i(TAG, "itemFrutaClicked!!");
         };
@@ -96,6 +100,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder> 
 
         @Override
         public void onClick(View view) {
+
             mListener.onClick(view, getAdapterPosition());
         }
     }

@@ -1,19 +1,34 @@
 package com.coyotestudio.healthyfruitsinfo.main_view;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.coyotestudio.healthyfruitsinfo.model.Fruta;
+import com.coyotestudio.healthyfruitsinfo.utils.Util;
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 import com.coyotestudio.healthyfruitsinfo.R;
+import com.coyotestudio.healthyfruitsinfo.about.AboutOfActivity;
 import com.coyotestudio.healthyfruitsinfo.main_view.data.MainViewAdapter;
 import com.coyotestudio.healthyfruitsinfo.main_view.data.MainViewData;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
@@ -30,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvMainViewOptions;
     private ArrayList<MainViewData> mArrayMenuInitial;
     private MainViewAdapter mAdapter;
-
+    private final static String TAG = MainActivity.class.getSimpleName();
+    static ArrayList<Fruta> arrFrutas = new ArrayList<>();
+    private FirebaseDatabase mDatabase = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +63,39 @@ public class MainActivity extends AppCompatActivity {
         initData();
         rvMainViewOptions.setAdapter(mAdapter);
 
+        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        Fabric.with(this, new Crashlytics());
+
+        // Get a reference to our frutas
+        //final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        if (mDatabase == null) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            //database.setPersistenceEnabled(true);
+            mDatabase = database;
+        }
+
+        DatabaseReference ref = mDatabase.getReference("frutas");
+        // Attach a listener to read the data from frutas
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //Fruta frutas = dataSnapshot.getValue(Fruta.class);
+                for (DataSnapshot frutaSanapShot :
+                        dataSnapshot.getChildren()) {
+                    Fruta fruta = frutaSanapShot.getValue(Fruta.class);
+                    arrFrutas.add(fruta);
+                    Log.i(TAG, "onDataChange: " + fruta.getNombre());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                //Log.i(TAG, "onCancelled: ");
+                Toast.makeText(MainActivity.this,
+                        "Error al momento de cargar los datos",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -61,13 +111,16 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.option_about:
-                Toast.makeText(this, "About option listener", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "About option listener", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, AboutOfActivity.class);
+                startActivity(i);
                 break;
             case R.id.option_share:
                 Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.option_contact:
-                Toast.makeText(this, "Contact option Listener", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Contact option Listener", Toast.LENGTH_SHORT).show();
+                Util.sendEmail(this);
                 break;
 
         }
@@ -94,6 +147,12 @@ public class MainActivity extends AppCompatActivity {
 
         mainImagesResources.recycle();
         mAdapter.notifyDataSetChanged();
-
     }
+
+    /*public void sendEmail() {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+        emailIntent.setData(Uri.parse("mailto:carlos.medj@gmail.com"));
+        startActivity(emailIntent);
+
+    }*/
 }
