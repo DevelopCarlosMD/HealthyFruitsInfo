@@ -5,7 +5,7 @@
     android:background="@android:color/white">
 
     <TextView
-        android:text="Info test man"
+        android:text="Info test man "
         android:id="@+id/tv_name_fruit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
