@@ -58,7 +58,6 @@ public class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.ViewHo
             }
         };
 
-
         return new ViewHolder(itemView, listener);
     }
 

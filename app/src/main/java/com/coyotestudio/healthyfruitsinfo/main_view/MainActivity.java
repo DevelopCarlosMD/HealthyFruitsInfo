@@ -1,5 +1,6 @@
 package com.coyotestudio.healthyfruitsinfo.main_view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ShareActionProvider;
 import android.widget.Toast;
 
 import com.coyotestudio.healthyfruitsinfo.model.Fruta;
@@ -46,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<MainViewData> mArrayMenuInitial;
     private MainViewAdapter mAdapter;
     private final static String TAG = MainActivity.class.getSimpleName();
-    static ArrayList<Fruta> arrFrutas = new ArrayList<>();
+    public static ArrayList<Fruta> arrFrutas = new ArrayList<>();
     private FirebaseDatabase mDatabase = null;
+    private ShareActionProvider mShareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,26 +106,28 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
 
+        //MenuItem item = menu.findItem(R.id.action_option_share);
+        //mShareActionProvider = (ShareActionProvider) item.getActionProvider();
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.option_about:
                 //Toast.makeText(this, "About option listener", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(this, AboutOfActivity.class);
                 startActivity(i);
                 break;
-            case R.id.option_share:
-                Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
+            case R.id.action_option_share:
+                //Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
+                Util.createShareIntent(this);
                 break;
             case R.id.option_contact:
                 //Toast.makeText(this, "Contact option Listener", Toast.LENGTH_SHORT).show();
                 Util.sendEmail(this);
                 break;
-
         }
 
         return super.onOptionsItemSelected(item);
@@ -130,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.fab_search)
     public void searchMainView() {
+
+        // Todo validar si es necesaria la busqueda en la vista inicial
         //Intent intent = new Intent(this, FruitsActivity.class);
         //startActivity(intent);
     }
@@ -149,10 +156,5 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
-    /*public void sendEmail() {
-        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-        emailIntent.setData(Uri.parse("mailto:carlos.medj@gmail.com"));
-        startActivity(emailIntent);
 
-    }*/
 }

@@ -1,25 +1,22 @@
 package com.coyotestudio.healthyfruitsinfo.fruits_view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.coyotestudio.healthyfruitsinfo.R;
+import com.coyotestudio.healthyfruitsinfo.about.AboutOfActivity;
+import com.coyotestudio.healthyfruitsinfo.main_view.MainActivity;
+import com.coyotestudio.healthyfruitsinfo.model.Fruta;
 import com.coyotestudio.healthyfruitsinfo.utils.Constants;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.coyotestudio.healthyfruitsinfo.utils.Util;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,7 +35,11 @@ public class DetailFruitActivity extends AppCompatActivity {
     ImageView mImageHead;
     @BindView(R.id.fab_show_detail)
     FloatingActionButton mShowDetail;
+    @BindView(R.id.tv_description_fruit)
+    TextView mFruitDescription;
+
     private String titleFruit;
+    private String[] arrDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,25 @@ public class DetailFruitActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }*/
         mImageHead.setImageResource(id);
+        arrDescription = getResources().getStringArray(R.array.arr_desc_fruits);
+        validatedescriptionInfo();
+    }
+
+    private void validatedescriptionInfo() {
+
+        if(titleFruit.equals("Cereza")){
+            mFruitDescription.setText(arrDescription[0]);
+        } else if(titleFruit.equals("Ciruela")){
+            mFruitDescription.setText(arrDescription[1]);
+        } else if (titleFruit.equals("Coco")){
+            mFruitDescription.setText(arrDescription[2]);
+        }else if (titleFruit.equals("Durazno")){
+            mFruitDescription.setText(arrDescription[3]);
+        }else if (titleFruit.equals("Fresa")){
+            mFruitDescription.setText(arrDescription[4]);
+        }else if (titleFruit.equals("Granada")){
+            mFruitDescription.setText(arrDescription[5]);
+        }
     }
 
     public void initCollapsingTool(String titlefruit) {
@@ -88,10 +108,7 @@ public class DetailFruitActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         /*MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
-
-        recoverData();
-
-        return true;*/
+        recoverData();*/
         return true;
     }
 
@@ -103,17 +120,18 @@ public class DetailFruitActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.option_about:
-                Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, AboutOfActivity.class);
+                startActivity(i);
+                break;
+            case R.id.action_option_share:
+                Util.createShareIntent(this);
                 break;
             case R.id.option_contact:
-                Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.option_share:
-                Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
+                Util.sendEmail(this);
                 break;
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @OnClick(R.id.fab_show_detail)
@@ -121,7 +139,18 @@ public class DetailFruitActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         ShowDetailInfoDialog detallePedidoEditDialog = new ShowDetailInfoDialog();
-        //detallePedidoEditDialog.setParametros(pedidoPrecios, detallePedido);
-        detallePedidoEditDialog.show(fm, "testsDialogo");
+        Fruta frutaInfo = null;
+
+        for (Fruta object:
+                MainActivity.arrFrutas) {
+            if(object.getNombre().equals(titleFruit.toLowerCase())){
+                frutaInfo = object;
+                break;
+            }
+        }
+
+
+        detallePedidoEditDialog.setParametros(frutaInfo);
+        detallePedidoEditDialog.show(fm, "dialogFruit");
     }
 }

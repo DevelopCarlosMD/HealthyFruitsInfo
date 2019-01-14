@@ -89,17 +89,37 @@
         <item>@drawable/uva</item>
     </string-array>
 
-    <string name="info_watermelon">
-        The watermelon is a large annual plant with long, weak, trailing or climbing stems which are five-angled (five-sided) and up to 3 m (10 ft) long.
-        Young growth is densely woolly with yellowish-brown hairs which disappear as the plant ages. The leaves are large, coarse, hairy pinnately-lobed
-        and alternate; they get stiff and rough when old. The plant has branching tendrils. The white to yellow flowers grow singly in the leaf axils and
-        the corolla is white or yellow inside and greenish-yellow on the outside. The flowers are unisexual, with male and female flowers occurring on the
-        same plant (monoecious). The male flowers predominate at the beginning of the season; the female flowers, which develop later, have inferior ovaries.
-        The styles are united into a single column. The large fruit is a kind of modified berry called a pepo with a thick rind (exocarp) and fleshy center
-        (mesocarp and endocarp). Wild plants have fruits up to 20 cm (8 in) in diameter, while cultivated varieties may exceed 60 cm (24 in). The rind of the
-        fruit is mid- to dark green and usually mottled or striped, and the flesh, containing numerous pips spread throughout the inside, can be red or pink
-        (most commonly), orange, yellow, green or white.
+    <string-array name="arr_desc_fruits">
+        <item>La cereza es el fruto de árboles grandes y normalmente vigorosos que tienen hojas suelen aserradas y acabadas en punta. Las flores son blancas y sus frutos pequeños, redondeados y normalmente de color rojo.
+            Los cerezos son árboles grandes y rectos, alcanzando alturas de 11m. El árbol de cereza ácida suele ser más pequeño y raramente pasa de los 5 metros. En condiciones óptimas y solamente en ciertas regiones pueden alcanzar hasta los 30 metros. </item>
+        <item>La ciruela, junto con el melocotón, la pera y la almendra, pertenece a la familia de las Rosáceas y al género Prunus, el cuál incluye algunos árboles y arbustos que son puramente ornamentales.
+            La estructura de todos los frutos pertenecientes al género Prunus es, de hecho, similar a los frutos individuales de zarzamoras o frambuesas; el hueso que hay en su interior es la parte más dura del ovario, y la más carnosa es la capa más externa del ovario. La semilla está dentro del hueso. Los botánicos se refieren a tales frutos como ‘frutos de hueso’. Sólo la semilla o almendra del almendro dulce se come normalmente; en otros frutos del género Prunus la almendra es desagradablemente amarga y usualmente se desecha.</item>
+        <item>Hay sin duda quien sepa todo sobre el coco. Yo me llevé la primera sorpresa cuando me puse a leer algo sobre nuestro pequeño amigo duro, fibroso y marrón. Resulta que los cocos son los frutos secos más grandes e importantes que hay en la naturaleza. Son la semilla de una drupa, el fruto de la Cocos nucifera, una palmera de 30 metros de altura.
+        Son originarios de Asia tropical y en Europa se empezaron a conocer en la Edad Media cuando empezaron a contruirse las primeras rutas de comercio.
+        La palabra coco es portuguesa y significa "duende" o "mono". Las marcas en el extremo, que corresponden al pedúnculo, pueden recordar a una cara.
+        Están compuestos por una capa gruesa y fibrosa, que es el fruto, dentro de la cual está la semilla propiamente dicha, encerrada en una cáscara leñosa. La carne y la leche son el alimento de la semilla, que contienen suficientes nutrientes y humedad para mantener el crecimiento de la planta durante más de un año.</item>
+        <item>El fruto también es conocido como manzana algodonosa.
+            El árbol es originario de la lejana China, donde su cultivo se practica desde hace miles de años. Posteriormente, llegó a Persia a través de la ruta de la seda, lugar donde los europeos lo conocieron; de ahí la palabra persica en su nombre científico. Prunus persica pertenece a la familia de las rosáceas y está emparentado con el almendro, el cerezo y el árbol de ciruela.</item>
+        <item>Las fresas, que alegran la vista y el paladar, son el fruto del fresal, una planta de la familia de las rosáceas. Su nombre botánico, Fragaria vesca, deriva del latín fragans, que significa "olorosa" y apunta así a una de sus características: la fragancia que puede percibirse incluso a distancia.
+            Aunque la fresa silvestre se conoce desde la época prehistórica y era consumida por griegos y romanos, no se empezó a cultivar hasta el siglo XIII, en Europa.</item>
+        <item>La granada es una infrutescencia, fruto de un árbol llamado granado que alcanza hasta cuatro metros de altura, de la familia de las Punicáceas; pequeña familia de árboles y arbustos, cuyos frutos tienen semillas prismáticas y rugosas.
+            La fruta posee una piel gruesa de color escarlata o dorada con tono carmesí en el exterior y una gran cantidad de semillas internas rodeadas de una jugosa pulpa de color rubí. En oriente es considerada como un símbolo del amor y de la fecundidad y sus virtudes han sido difundidas por poetas tan conocidos como García Lorca.</item>
+
+    </string-array>
+
+    <string-array name="posDescripcion">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    </string-array>
+
+    <string name="info_coco">
     </string>
+
+
     <string name="introduction">Introduction</string>
     <string name="lbl_recipes">Recipes</string>
     <string name="lbl_juice_fruits">Juice Fruits</string>

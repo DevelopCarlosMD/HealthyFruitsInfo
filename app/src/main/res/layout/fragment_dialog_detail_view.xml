@@ -1,14 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="Info test man "
-        android:id="@+id/tv_name_fruit"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="72dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fruit_ini_header_low" />
 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_name_fruit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="Nombre: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_name_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                tools:text="Naranja" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_calories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calorias: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_calories_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_water"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agua: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_water_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_fiber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fibra: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_fiber_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_proteins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proteinas: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_proteins_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_fats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grasas: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_fats_content"
+                android:maxLines="2"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_minerals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Minerales: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_minerals_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_vitamins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vitaminas: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_vitamins_content"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_properties_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Propiedades: "
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_properties_content"
+                android:inputType="textMultiLine"
+                android:padding="3dip"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>

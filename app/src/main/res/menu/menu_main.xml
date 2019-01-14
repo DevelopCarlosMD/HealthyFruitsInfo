@@ -9,10 +9,10 @@
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/option_share"
+        android:id="@+id/action_option_share"
+        android:icon="@drawable/ic_share"
         android:title="@string/share"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_share"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/option_contact"

@@ -63,7 +63,7 @@ public class FruitsActivity extends AppCompatActivity {
 
         // Create the ArryList of Fruits with the titles and information about each fruit
         for (int i = 0; i < fruitNames.length; i++) {
-            mFruitaData.add(new Fruit(fruitNames[i], fruitsImageResources.getResourceId(i,0)));
+            mFruitaData.add(new Fruit(fruitNames[i], fruitsImageResources.getResourceId(i, 0)));
         }
 
         fruitsImageResources.recycle();
@@ -81,13 +81,14 @@ public class FruitsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.option_about:
                 Intent i = new Intent(this, AboutOfActivity.class);
                 startActivity(i);
                 break;
-            case R.id.option_share:
-                Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
+            case R.id.action_option_share:
+                //Toast.makeText(this, "Share option listener", Toast.LENGTH_SHORT).show();
+                Util.createShareIntent(this);
                 break;
             case R.id.option_contact:
                 //Toast.makeText(this, "Contact option Listener", Toast.LENGTH_SHORT).show();
